@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0b0c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Ligne K vers CDG 1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="board" aria-live="polite">
+      <header class="k-panel">
+        <div class="top-line">
+          <span class="line-badge line-k">K</span>
+          <div class="k-times" id="kTimes">
+            <span class="skeleton wide"></span>
+          </div>
+          <span class="updated" id="updated">MàJ --:--</span>
+        </div>
+        <div class="k-detail" id="kDetail">Chargement du trajet…</div>
+      </header>
+
+      <section class="rer-panel">
+        <div class="rer-title">
+          <span class="line-badge line-b">B</span>
+          <div>
+            <strong>Aulnay-sous-Bois</strong>
+            <span>Direction Aéroport CDG 1</span>
+          </div>
+        </div>
+
+        <div class="trains" id="trains">
+          <article class="train-card loading-card"><span class="skeleton"></span></article>
+          <article class="train-card loading-card"><span class="skeleton"></span></article>
+        </div>
+
+        <div class="message" id="message" hidden></div>
+      </section>
+    </section>
+
+    <nav class="controls" aria-label="Choix du jour et actualisation">
+      <div class="day-switch">
+        <button class="day-button active" type="button" data-mode="today">Aujourd’hui</button>
+        <button class="day-button" type="button" data-mode="tomorrow">Demain</button>
+      </div>
+      <button class="refresh-button" id="refreshButton" type="button" aria-label="Actualiser les horaires">
+        <span aria-hidden="true">↻</span> Actualiser
+      </button>
+    </nav>
+
+    <p class="notice">Horaires temps réel fournis par Île-de-France Mobilités.</p>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
